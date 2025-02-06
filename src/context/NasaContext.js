@@ -1,23 +1,45 @@
-import React, { createContext, useEffect, useState} from 'react'
+import React, { createContext, useContext, useEffect, useState} from 'react'
 
-export const NasaContext = createContext()
+const NasaContext = createContext()
+
+export const useNasa = () => {
+    const context = useContext(NasaContext)
+    if (!context) {
+        throw new Error('useNasa must be used within NasaProvider')
+    }
+    return context
+}
 
 export const NasaProvider = ({children}) => {
     const [neoData, setNeoData] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
     const [filteredData, setFilteredData] = useState(null)
+    
     const API_KEY = process.env.REACT_APP_NASA_KEY
+    const BASE_URL = 'https://api.nasa.goc/neo/rest/v1/feed'
 
-    useEffect(() => {
-        fetch(`https://api.nasa.goc/neo/rest/v1/feed?start_date=2024-02-01&end_date=2025-02-05&api_key=${API_KEY}`)
-        .then(res => res.json())
-        .then(data => {
-            setNeoData(data.near_earth_objects)
-            setFilteredData(data.near_earth_objects)
-            setLoading(false)
-        })
-        .catch(error => console.error("Error fetching NEO data:", error))
-    }, [])
+   const fetchNeoData = async (startDate, endDate) => {
+    try {
+        setLoading(true)
+        setError(null)
+        const response = await fetch(
+            `${BASE_URL}?start_date=${startDate}&end_date=${endDate}&api_key=${API_KEY}`
+        )
+        if (!response.ok) {
+            throw new Error(`NASA API returned ${response.status}`)
+        }
+
+        const data = await response.json()
+        setNeoData(data.near_earth_objects)
+        setFilteredData(data.near_earth_objects)
+    } catch (err) {
+        setError(err.message)
+        console.error('Error fetching NEO data:', err)
+    } finally {
+        setLoading(false)
+    }
+   }
 
     function filterByHazard(isHazardous) {
         if (!neoData) return
@@ -30,8 +52,14 @@ export const NasaProvider = ({children}) => {
         setFilteredData(filtered)
     }
 
+    useEffect(() => {
+        const startDate = '2024-01-01'
+        const endDate = '2025-01-31'
+        fetchNeoData(startDate, endDate)
+    }, [])
+    
   return (
-    <NasaContext.Provider value={{ neoData: filteredData, loading, filterByHazard}}>
+    <NasaContext.Provider value={{ neoData: filteredData, loading, error, filterByHazard, fetchNeoData}}>
         {children}
     </NasaContext.Provider>
   )
