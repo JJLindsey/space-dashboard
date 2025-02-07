@@ -17,7 +17,7 @@ export const NasaProvider = ({children}) => {
     const [filteredData, setFilteredData] = useState(null)
     
     const API_KEY = process.env.REACT_APP_NASA_KEY
-    const BASE_URL = 'https://api.nasa.goc/neo/rest/v1/feed'
+    const BASE_URL = 'https://api.nasa.gov/neo/rest/v1/feed'
 
    const fetchNeoData = async (startDate, endDate) => {
     try {
@@ -54,7 +54,7 @@ export const NasaProvider = ({children}) => {
 
     useEffect(() => {
         const startDate = '2024-01-01'
-        const endDate = '2025-01-31'
+        const endDate = '2024-01-06'
         fetchNeoData(startDate, endDate)
     }, [])
     
