@@ -103,7 +103,7 @@ export default function GeoRiskMap({ neoData = {}, darkMode}) {
     }, [worldData, neoData, darkMode])
 
   return (
-    <Card>
+    <Card sx={{border: '1px solid'}}>
         <CardContent>
             <Typography>Geographic Impact Risk</Typography>
             <Box>

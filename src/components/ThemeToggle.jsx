@@ -4,11 +4,11 @@ import { lightTheme, darkTheme } from '../theme/Theme'
 
 export default function ThemeToggle({ children}) {
     const [darkMode, setDarkMode] = useState(() => {
-        return localStorage.getItem('darkMode') === true
+        return JSON.parse(localStorage.getItem('darkMode')) || false
     })
 
     useEffect(()=> {
-        localStorage.setItem('darkMode', darkMode)
+        localStorage.setItem('darkMode', JSON.stringify(darkMode))
     }, [darkMode])
 
   return (
