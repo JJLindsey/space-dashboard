@@ -21,7 +21,7 @@ export default function AsteroidBarChart( {neoData }) {
             {
                 label: 'Estimated Diameter (km)',
                 data: largestAsteroids.map(neo => neo.estimated_diameter.kilometers.estimated_diameter_max),
-                backgroundColor: 'rgba(75, 192, 192, 0.9)'
+                backgroundColor: '#0000ff',
             }
         ]
     }
@@ -33,7 +33,7 @@ export default function AsteroidBarChart( {neoData }) {
                 labels: {
                     color: theme.palette.text.primary // Dynamic text color
                 }
-            }
+            },
         },
         scales: {
             x: {
@@ -52,7 +52,7 @@ export default function AsteroidBarChart( {neoData }) {
                     color: theme.palette.mode === "dark" ? "#444" : "#ddd"
                 }
             }
-        }
+        },
     }
     return (
         <Card sx={{border: '1px solid'}}>

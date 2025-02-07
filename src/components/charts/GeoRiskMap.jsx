@@ -29,7 +29,8 @@ export default function GeoRiskMap({ neoData = {}, darkMode}) {
         const svg = d3.select(svgRef.current)
             .attr('width', width)
             .attr('height', height)
-            .style('background', darkMode ? '#1e1e1e' : '#eaf9fb')
+            //.style('background', darkMode ? '#1e1e1e' : '#eaf9fb')
+            .style('background','#d7faff')
             .style('border', '1px solid #ccc')
         
         //clear prev elements
