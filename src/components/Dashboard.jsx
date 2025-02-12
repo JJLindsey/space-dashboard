@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid2'
 import { Box } from '@mui/material'
 import AsteroidBarChart from './charts/AsteroidBarChart'
 import AsteroidLineChart from './charts/AsteroidLineChart'
+import OrbitVisual from './charts/OrbitVisual'
 
 export default function Dashboard({data}) {
   return (
@@ -19,6 +20,9 @@ export default function Dashboard({data}) {
         </Grid>
         <Grid item>
             <AsteroidLineChart neoData={data}/>
+        </Grid>
+        <Grid item>
+            <OrbitVisual neoData={data}/>
         </Grid>
     </Grid>
   )
