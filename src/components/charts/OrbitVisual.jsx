@@ -4,7 +4,7 @@ import OrbitLegend from '../OrbitLegend'
 
 
 export default function OrbitVisual({ neoData = {}}) {
-    const [selectedScale, setSelectedScale] = useState('distance')
+    const [selectedScale, setSelectedScale] = useState('size')
     const [timeScale, setTimeScale] = useState(50)
     const animationRef = useRef(null)
     const [rotation, setRotation] = useState(0)
@@ -31,7 +31,7 @@ export default function OrbitVisual({ neoData = {}}) {
     const calculatePosition = (orbit, index) => {
     const orbitRadius = selectedScale === 'distance' 
       ? 150 + orbit.distance * 50 
-      : 150 + orbit.diameter * 1000;
+      : 150 + orbit.diameter * 200
     
     const angle = ((index * 360 / orbits.length) + rotation) * (Math.PI / 180);
     
@@ -63,7 +63,7 @@ export default function OrbitVisual({ neoData = {}}) {
                     return (
                         <g key={orbit.name}>
                             <circle cx='0' cy='0' r={orbitRadius} fill='none' stroke={orbit.isHazardous ? '#ff4444' : '#44ff44'} strokeWidth='0.5' opacity='0.3' />
-                            <circle cx={pos.x} cy={pos.y} r={orbit.diameter * 5 + 3} fill={orbit.isHazardous ? '#ff4444' : '#44ff44'}>
+                            <circle cx={pos.x} cy={pos.y} r={orbit.diameter * 2 + 2} fill={orbit.isHazardous ? '#ff4444' : '#44ff44'}>
                                 <title>{`${orbit.name}\nDistance: ${orbit.distance.toFixed(2)} AU\nDiameter: ${orbit.diameter.toFixed(2)} km`}</title>
                             </circle>
                         </g>
@@ -75,6 +75,7 @@ export default function OrbitVisual({ neoData = {}}) {
             <ToggleButtonGroup
                 value={selectedScale}
                 exclusive
+                size='small'
                 onChange={(e, value) => value && setSelectedScale(value)}
             >
                 <ToggleButton value='size'>Size Scale</ToggleButton>

@@ -10,17 +10,15 @@ export default function OrbitLegend() {
         {label: 'Orbit Path dashed lines', color: 'blue'}
     ]
   return (
-    <Box>
-        <Typography>Legend:</Typography>
-        <Grid2>
+    <Box sx={{ml: 4}}>
+        <Typography sx={{fontWeight: 'bold'}}>Legend:</Typography>
+        <Grid2 container spacing={2}>
             {legendData.map((legend, index) => (
-                <Grid2 key={index} container spacing={1}>
-                    <Grid2 item>
+                <Grid2 xs={6} item key={index}>
+                    <Box display='flex' alignItems='center' gap={1}>
                         <Box sx={{width: '10px', height: '10px', backgroundColor: legend.color, borderRadius: '50%'}}></Box>
-                    </Grid2>
-                    <Grid2 item>
                         <Typography>{legend.label}</Typography>
-                    </Grid2>
+                    </Box>
                 </Grid2>
             ))}
         </Grid2>
