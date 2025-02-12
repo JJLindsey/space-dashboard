@@ -18,7 +18,7 @@ export default function GeoRiskMap({ neoData = {}, darkMode}) {
         if (! worldData || !neoData) return
 
         const width = 600
-        const height = 300
+        const height = 400
 
         const projection = d3.geoMercator()
             .scale(130) //zoom level

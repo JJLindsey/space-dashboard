@@ -55,9 +55,9 @@ export default function AsteroidBarChart( {neoData }) {
         },
     }
     return (
-        <Card sx={{border: '1px solid'}}>
+        <Card sx={{border: '1px solid', width: '700px', maxWidth: 800, margin: 'auto'}}>
             <CardContent>
-            AsteroidBarChart
+                <Typography>Asteroid Bar Chart</Typography>
                 <Bar data={data} options={options}/>
                 <Typography align='center'>Asteroid Name</Typography>
             </CardContent>

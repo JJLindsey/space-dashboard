@@ -9,7 +9,7 @@ ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, Title, T
 export default function AsteroidLineChart({ neoData}) {
     const theme = useTheme()
 
-    if (!neoData) return 'no Ateroid Data'
+    if (!neoData) return 'no Asteroid Data'
 
     const asteroidCounts = Object.keys(neoData).map(date => ({
         date,
@@ -59,7 +59,7 @@ export default function AsteroidLineChart({ neoData}) {
     }
 
   return (
-    <Card sx={{border: '1px solid'}}>
+    <Card sx={{border: '1px solid', width: '700px', maxWidth: 800}}>
         <CardContent>
         Asteroid Line Chart
             <Line data={data} options={options}/>

@@ -7,7 +7,7 @@ export default function DashboardView() {
     const {neoData} = useNasa()
 
   return (
-    <Container maxWidth='md' sx={{py: 4}}>
+    <Container maxWidth='xl' sx={{ px: 8, py: 4 }}>
         DashboardView
         <Dashboard data={neoData}/>
     </Container>
