@@ -120,13 +120,13 @@ export default function GeoRiskMap({ neoData = {}, darkMode}) {
                         border: '1px solid #ccc'
                     }}
                 />
-            <Box sx={{ mt: 2, display: 'flex', alignItems: 'center' }}>
-            <Typography variant='body2' sx={{ mr: 1 }}>Risk Level:</Typography>
+            <Box sx={{ mt: 4, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <Typography variant='body2' sx={{ mr: 1 }}>Risk Level: Low</Typography>
                 <Box
                     sx={{
                     width: 200,
                     height: 20,
-                    background: 'linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,0.7))'
+                    background: 'linear-gradient(to right, rgba(252, 244, 2, 0.77), rgba(255, 0, 0, 0.76))'
                     }}
                 />
             <Typography variant='body2' sx={{ ml: 1 }}>High</Typography>

@@ -43,8 +43,8 @@ export default function OrbitVisual({ neoData = {}}) {
 
   return (
     <Card sx={{border: '1px solid'}}>
-        <Typography>Solar System Orbital Visualization</Typography>
         <CardContent>
+        <Typography>Solar System Orbital Visualization</Typography>
             <svg viewBox='-250 -250 500 500' style={{width: '100%', height: 'auto'}}>
                 {/* Sun */}
                 <circle cx='0' cy='0' r='20' fill='#f9d71c' />
@@ -55,7 +55,7 @@ export default function OrbitVisual({ neoData = {}}) {
                 {/* Asteroids */}
                 {orbits.map((orbit, index) => {
                     //const angle = (index * 260 /orbits.length) * (Math.PI / 180)
-                    const orbitRadius = selectedScale === 'distance' ? 150 + orbit.distance * 50 : 150 + orbit.diameter * 1000
+                    const orbitRadius = selectedScale === 'distance' ? 150 + orbit.distance * 50 : 150 + orbit.diameter * 500
                     const pos = calculatePosition(orbit, index)
                     // const x = Math.cos(angle) * orbitRadius
                     // const y = Math.sin(angle) * orbitRadius

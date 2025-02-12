@@ -25,11 +25,12 @@ export const darkTheme = createTheme({
             secondary: '#7ec8e3', //light blue
         },
         background: {
-            default: '#050a30', //deep blue
+            default: 'linear-gradient(135deg, #050a30 30%, #7ec8e3 100%)',
             paper: '#000'
         },
         text: {
             primary: '#7ec8e3',
+            secondary: '#040273'
         }
     }
 })
