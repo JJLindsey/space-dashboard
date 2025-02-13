@@ -21,7 +21,7 @@ export default function AsteroidBarChart( {neoData }) {
             {
                 label: 'Estimated Diameter (km)',
                 data: largestAsteroids.map(neo => neo.estimated_diameter.kilometers.estimated_diameter_max),
-                backgroundColor: '#0000ff',
+                backgroundColor: '#cd1c18',
             }
         ]
     }

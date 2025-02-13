@@ -10,12 +10,12 @@ import TopStats from './TopStats'
 export default function Dashboard({data}) {
   return (
     <>
-   <Box>
+   {/* <Box sx={{mb: 4}}> */}
     <Card>
         <TopStats neoData={data}/>
-      </Card>
-   </Box>
-    <Grid container spacing={2}>
+      {/* </Card> */}
+   {/* </Box> */}
+    <Grid container spacing={2} sx={{display: 'flex', justifyContent: 'center'}}>
         <Grid item xs={12} md={6}>
             <GeoRiskMap neoData={data} />
         </Grid>
@@ -29,6 +29,7 @@ export default function Dashboard({data}) {
             <AsteroidLineChart neoData={data}/>
         </Grid>
     </Grid>
+    </Card>
     </>
   )
 }

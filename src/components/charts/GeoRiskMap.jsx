@@ -17,8 +17,8 @@ export default function GeoRiskMap({ neoData = {}, darkMode}) {
     useEffect(() => {
         if (! worldData || !neoData) return
 
-        const width = 600
-        const height = 400
+        const width = 650
+        const height = 550
 
         const projection = d3.geoMercator()
             .scale(130) //zoom level
@@ -104,7 +104,7 @@ export default function GeoRiskMap({ neoData = {}, darkMode}) {
     }, [worldData, neoData, darkMode])
 
   return (
-    <Card sx={{border: '1px solid'}}>
+    <Card  elevation={8}>
         <CardContent>
             <Typography>Geographic Impact Risk</Typography>
             <Box>

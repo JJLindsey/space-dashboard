@@ -6,11 +6,11 @@ export default function OrbitLegend() {
         {label: 'Earth', color: 'blue'},
         {label: 'Sun', color: 'yellow'},
         {label: 'Hazardous Object', color: 'red'},
-        {label: 'Non-Hazardous Object', color: 'green'},
+        {label: 'Non-Hazardous Object', color: '#44ff44'},
         {label: 'Earth Orbit Path', color: 'purple'}
     ]
   return (
-    <Box sx={{ml: 4}}>
+    <Box sx={{ml: 3, mr: 2}}>
         <Typography sx={{fontWeight: 'bold'}}>Legend:</Typography>
         <Grid2 container spacing={2}>
             {legendData.map((legend, index) => (

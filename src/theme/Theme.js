@@ -27,7 +27,8 @@ export const darkTheme = createTheme({
         },
         background: {
             default: 'linear-gradient(135deg, #050a30 30%, #7ec8e3 100%)',
-            paper: '#000'
+            // default: '#040273',
+            paper: '#040273'
         },
         text: {
             primary: '#7ec8e3',

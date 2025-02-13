@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { Box, Card, CardActions, CardContent, Slider, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
+import { Box, Button, ButtonGroup ,Card, CardActions, CardContent, Slider, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
 import OrbitLegend from '../OrbitLegend'
 
 
@@ -42,27 +42,27 @@ export default function OrbitVisual({ neoData = {}}) {
   };
 
   return (
-    <Card sx={{border: '1px solid'}}>
+    <Card elevation={8} sx={{border: '1px solid '}}>
         <CardContent>
         <Typography>Solar System Orbital Visualization</Typography>
-            <svg viewBox='-250 -250 500 500' style={{width: '100%', height: 'auto'}}>
+            <svg viewBox='-250 -250 500 500' style={{width: '100%', height: 'auto', backgroundColor: '#000'}}>
                 {/* Sun */}
                 <circle cx='0' cy='0' r='20' fill='#f9d71c' />
                 {/* Earth Orbit*/}
-                <circle cx='0' cy='0' r='150' fill='none' stroke='blue' strokeWidth='1' strokeDasharray='3,4' />
+                <circle cx='0' cy='0' r='150' fill='none' stroke='blue' strokeWidth='2' strokeDasharray='3,4' />
                 {/* Earth */}
                 <circle cx='150' cy='0' r='10' fill='blue' />
                 {/* Asteroids */}
                 {orbits.map((orbit, index) => {
                     //const angle = (index * 260 /orbits.length) * (Math.PI / 180)
-                    const orbitRadius = selectedScale === 'distance' ? 150 + orbit.distance * 50 : 150 + orbit.diameter * 500
+                    const orbitRadius = selectedScale === 'distance' ? 150 + orbit.distance * 50 : 150 + orbit.diameter * 600
                     const pos = calculatePosition(orbit, index)
                     // const x = Math.cos(angle) * orbitRadius
                     // const y = Math.sin(angle) * orbitRadius
 
                     return (
                         <g key={orbit.name}>
-                            <circle cx='0' cy='0' r={orbitRadius} fill='none' stroke={orbit.isHazardous ? '#ff4444' : '#44ff44'} strokeWidth='0.5' opacity='0.3' />
+                            <circle cx='0' cy='0' r={orbitRadius} fill='none' stroke={orbit.isHazardous ? '#ed2100' : '#44ff44'} strokeWidth='0.5' opacity='0.3' />
                             <circle cx={pos.x} cy={pos.y} r={orbit.diameter * 2 + 2} fill={orbit.isHazardous ? '#ff4444' : '#44ff44'}>
                                 <title>{`${orbit.name}\nDistance: ${orbit.distance.toFixed(2)} AU\nDiameter: ${orbit.diameter.toFixed(2)} km`}</title>
                             </circle>
@@ -72,15 +72,16 @@ export default function OrbitVisual({ neoData = {}}) {
             </svg>
         </CardContent>
         <CardActions sx={{justifyContent: 'center'}}>
-            <ToggleButtonGroup
+            <ButtonGroup
                 value={selectedScale}
                 exclusive
+                variant='contained'
                 size='small'
                 onChange={(e, value) => value && setSelectedScale(value)}
             >
-                <ToggleButton value='size'>Size Scale</ToggleButton>
-                <ToggleButton value='distance'>Distance Scale</ToggleButton>
-            </ToggleButtonGroup>
+                <Button value='size'>Size Scale</Button>
+                <Button value='distance'>Distance Scale</Button>
+            </ButtonGroup>
         </CardActions>
         <OrbitLegend/> 
         <Box sx={{width: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 'auto', flexDirection: 'column'}}>
