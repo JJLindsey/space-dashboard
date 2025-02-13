@@ -1,7 +1,7 @@
 import React from 'react'
 import GeoRiskMap from './charts/GeoRiskMap'
 import Grid from '@mui/material/Grid2'
-import { Card } from '@mui/material'
+import { Box, Card, Typography } from '@mui/material'
 import AsteroidBarChart from './charts/AsteroidBarChart'
 import AsteroidLineChart from './charts/AsteroidLineChart'
 import OrbitVisual from './charts/OrbitVisual'
@@ -11,6 +11,16 @@ export default function Dashboard({data}) {
   return (
     <>
    {/* <Box sx={{mb: 4}}> */}
+   <Box
+    sx={{
+        backgroundImage: `url(${process.env.PUBLIC_URL}/nasa-Q1p7bh3SHj8-unsplash-earth.png)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        minHeight: '250px',
+      }}
+   >
+        <Typography variant='h3' align='center' color='#FFF' sx={{pt: '75px'}}>Near Earth Object Dashboard</Typography>
+   </Box>
     <Card>
         <TopStats neoData={data}/>
       {/* </Card> */}
