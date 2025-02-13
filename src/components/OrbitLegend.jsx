@@ -7,7 +7,7 @@ export default function OrbitLegend() {
         {label: 'Sun', color: 'yellow'},
         {label: 'Hazardous Object', color: 'red'},
         {label: 'Non-Hazardous Object', color: 'green'},
-        {label: 'Orbit Path dashed lines', color: 'blue'}
+        {label: 'Earth Orbit Path', color: 'purple'}
     ]
   return (
     <Box sx={{ml: 4}}>

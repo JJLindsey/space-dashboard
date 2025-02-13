@@ -7,7 +7,7 @@ export default function StatisticCard({title, value, color}) {
    <Card>
     <CardContent>
         <Typography>{title}</Typography>
-        <Typography variant='h4' style={color}>{value}</Typography>
+        <Typography variant='h4' style={{color}}>{value}</Typography>
     </CardContent>
    </Card>
   )

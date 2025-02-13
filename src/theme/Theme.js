@@ -23,6 +23,7 @@ export const darkTheme = createTheme({
         primary: {
             main: '#adb4ff', //lightest blue
             secondary: '#7ec8e3', //light blue
+            error: '#D22B2B'
         },
         background: {
             default: 'linear-gradient(135deg, #050a30 30%, #7ec8e3 100%)',
