@@ -15,11 +15,13 @@ export const NasaProvider = ({children}) => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [filteredData, setFilteredData] = useState(null)
+    const [startDate, setStartDate] = useState('2024-01-01')
+    const [endDate, setEndDate] = useState('2024-01-06')
     
     const API_KEY = process.env.REACT_APP_NASA_KEY
     const BASE_URL = 'https://api.nasa.gov/neo/rest/v1/feed'
 
-   const fetchNeoData = async (startDate, endDate) => {
+   const fetchNeoData = async (start, end) => {
     try {
         setLoading(true)
         setError(null)
@@ -33,6 +35,8 @@ export const NasaProvider = ({children}) => {
         const data = await response.json()
         setNeoData(data.near_earth_objects)
         setFilteredData(data.near_earth_objects)
+        setStartDate(start)
+        setEndDate(end)
     } catch (err) {
         setError(err.message)
         console.error('Error fetching NEO data:', err)
@@ -53,13 +57,11 @@ export const NasaProvider = ({children}) => {
     }
 
     useEffect(() => {
-        const startDate = '2024-01-01'
-        const endDate = '2024-01-06'
         fetchNeoData(startDate, endDate)
     }, [])
     
   return (
-    <NasaContext.Provider value={{ neoData: filteredData, loading, error, filterByHazard, fetchNeoData}}>
+    <NasaContext.Provider value={{ neoData: filteredData, loading, error, filterByHazard, fetchNeoData, startDate, endDate, setStartDate, setEndDate}}>
         {children}
     </NasaContext.Provider>
   )
