@@ -43,8 +43,8 @@ export default function GeoRiskMap({ neoData = {}, darkMode}) {
             .append('path')
             .attr('class', 'country')
             .attr('d', pathGenerator)
-            .attr('fill', darkMode ? '#2a2a2a' : '#ddd')
-            .attr('stroke', darkMode ? '#444' : '#aaa');
+            .attr('fill', darkMode ? '#2a2a2a' : '#84b067')
+            .attr('stroke', darkMode ? '#444' : '#593c1e');
 
         //hazardous asteroid data
         const hazardousNeos = Object.values(neoData)

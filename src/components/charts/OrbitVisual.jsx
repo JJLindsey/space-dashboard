@@ -42,7 +42,7 @@ export default function OrbitVisual({ neoData = {}}) {
   };
 
   return (
-    <Card elevation={8} sx={{border: '0.5px solid '}}>
+    <Card elevation={8}>
         <CardContent>
         <Typography>Solar System Orbital Visualization</Typography>
             <svg viewBox='-250 -250 500 500' style={{width: '100%', height: 'auto', backgroundColor: '#000'}}>

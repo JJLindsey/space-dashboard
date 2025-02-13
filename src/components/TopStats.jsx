@@ -28,16 +28,22 @@ export default function TopStats({ neoData }) {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <Typography variant="h6">
-            Date Range: {startDate} to {endDate}
+        <Grid2 container spacing={1} sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+          <Typography variant="h6" fontWeight={'bold'}>
+            Current Date Range: {dayjs(startDate).format('MMM DD, YYYY')} to {dayjs(endDate).format('MMM DD, YYYY')}
         </Typography>
-        <Grid2 container spacing={1}>
+        <Grid2 item>
+            <Typography>Choose a Different Start Date</Typography>
         <DatePicker
-            label='Start Date'
+            aria-label='Date picker'
             value={startDayjs}
             onChange={handleDateChange}
+            slotProps={{ textField: { InputLabelProps: { shrink: true } } }}
             renderInput={(params) => <TextField {...params} />}
         />
+        </Grid2>
+        </Grid2>
+        <Grid2 container spacing={1} sx={{display: 'flex', justifyContent: 'center'}}>
         <Grid2 item xs={12} md={4}>
             <StatisticCard title='Total NEOs' value={totalCount} color='primary.main'/>
         </Grid2>

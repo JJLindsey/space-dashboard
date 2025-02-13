@@ -18,7 +18,7 @@ export default function ThemeToggle({ children}) {
                 styles={{
                     body: {
                         background: darkMode
-                            ? 'linear-gradient(90deg, rgba(2,0,23,1) 0%, rgba(29,141,253,1) 50%, rgba(35,22,163,1) 100%)'
+                            ? 'linear-gradient(90deg, rgb(4, 0, 50) 0%, rgba(29,141,253,1) 50%, rgba(4, 0, 50,1) 100%)'
                             : 'linear-gradient(0deg, #ffffff 30%,rgb(190, 226, 255) 100%)',
                         minHeight: '100vh',
                         margin: 0,
