@@ -1,7 +1,7 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
 import { Chart as ChartJS, CategoryScale, Legend, LinearScale, LineElement, PointElement, Title, Tooltip } from 'chart.js'
-import { Card, CardContent, useTheme } from '@mui/material'
+import { Card, CardContent, useTheme, Typography } from '@mui/material'
 
 
 ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend)
@@ -61,8 +61,9 @@ export default function AsteroidLineChart({ neoData}) {
   return (
     <Card sx={{border: '1px solid', width: '700px', maxWidth: 800}}>
         <CardContent>
-        Asteroid Line Chart
+            Number of Asteroids Approaching Earth
             <Line data={data} options={options}/>
+            <Typography align='center'>Date</Typography>
         </CardContent>
     </Card>
   )
