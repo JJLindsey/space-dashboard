@@ -1,7 +1,7 @@
 import React from 'react'
 import GeoRiskMap from './charts/GeoRiskMap'
 import Grid from '@mui/material/Grid2'
-import { Box, Card } from '@mui/material'
+import { Card } from '@mui/material'
 import AsteroidBarChart from './charts/AsteroidBarChart'
 import AsteroidLineChart from './charts/AsteroidLineChart'
 import OrbitVisual from './charts/OrbitVisual'

@@ -31,7 +31,7 @@ export const darkTheme = createTheme({
             paper: '#040273'
         },
         text: {
-            primary: '#7ec8e3',
+            primary: '#FFF',
             secondary: '#040273'
         }
     }

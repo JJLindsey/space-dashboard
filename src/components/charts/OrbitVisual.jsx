@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { Box, Button, ButtonGroup ,Card, CardActions, CardContent, Slider, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
+import { Box, Button, ButtonGroup ,Card, CardActions, CardContent, Slider, Typography } from '@mui/material'
 import OrbitLegend from '../OrbitLegend'
 
 
@@ -42,7 +42,7 @@ export default function OrbitVisual({ neoData = {}}) {
   };
 
   return (
-    <Card elevation={8} sx={{border: '1px solid '}}>
+    <Card elevation={8} sx={{border: '0.5px solid '}}>
         <CardContent>
         <Typography>Solar System Orbital Visualization</Typography>
             <svg viewBox='-250 -250 500 500' style={{width: '100%', height: 'auto', backgroundColor: '#000'}}>
@@ -84,9 +84,9 @@ export default function OrbitVisual({ neoData = {}}) {
             </ButtonGroup>
         </CardActions>
         <OrbitLegend/> 
-        <Box sx={{width: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 'auto', flexDirection: 'column'}}>
+        <Box sx={{width: '70%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 'auto'}}>
             <Typography>Animation Speed</Typography>
-            <Slider value={timeScale} onChange={(e, value) => setTimeScale(value)} min={0} max={100} aria-label='slider for animation'></Slider>
+            <Slider value={timeScale} onChange={(e, value) => setTimeScale(value)} min={0} max={100} aria-label='slider for animation' sx={{width: '50%', ml: 1}}></Slider>
         </Box>
     </Card>
   )
