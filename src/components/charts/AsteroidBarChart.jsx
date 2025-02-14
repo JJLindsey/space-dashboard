@@ -55,9 +55,9 @@ export default function AsteroidBarChart( {neoData }) {
         },
     }
     return (
-        <Card sx={{border: '1px solid', width: '700px', maxWidth: 800, margin: 'auto'}}>
+        <Card elevation={8} sx={{width: '700px', maxWidth: 800, margin: 'auto'}}>
             <CardContent>
-                <Typography>Largest Tracked Asteroid Size</Typography>
+                <Typography sx={{pb: 4}}>NEO Size</Typography>
                 <Bar data={data} options={options}/>
                 <Typography align='center'>Asteroid Name</Typography>
             </CardContent>
