@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNeoStats } from '../hooks/useNeoStats'
-import { Grid2, Typography, TextField } from '@mui/material'
+import { Grid2, Typography, TextField, Divider } from '@mui/material'
 import StatisticCard from './StatisticCard'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers'
@@ -42,9 +42,12 @@ export default function TopStats({ neoData }) {
         />
         </Grid2>
         </Grid2>
+        <Grid2 sx={{display: 'flex', justifyContent: 'center', pb: 1, pt: 2}}>
+        <Typography variant='h4'>Near Earth Object Stats</Typography>
+        </Grid2>
         <Grid2 container spacing={1} sx={{display: 'flex', justifyContent: 'space-evenly', pb: 4, pt: 2}}>
         <Grid2 item xs={12} md={4}>
-            <StatisticCard title='Total NEOs' value={totalCount} color='primary.main'/>
+            <StatisticCard title='Total NEOs' value={totalCount} />
         </Grid2>
         <Grid2 item xs={12} md={4}>
             <StatisticCard title='Hazardous NEOs' value={hazardousCount} color='primary.error'/>
@@ -53,6 +56,7 @@ export default function TopStats({ neoData }) {
             <StatisticCard title='Nonhazardous NEOs' value={nonHazardousCount}/>
         </Grid2>
         </Grid2>
+        <Divider variant='middle' sx={{backgroundColor: 'blue', mb: 4 }}/>
     </LocalizationProvider>
   )
 }

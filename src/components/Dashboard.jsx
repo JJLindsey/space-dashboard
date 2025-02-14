@@ -20,8 +20,8 @@ export default function Dashboard({data}) {
    >
         <Typography variant='h3' align='center' color='#FFF' sx={{pt: '75px'}}>Near Earth Object Dashboard</Typography>
    </Box>
-    <Card sx={{pb: 4}}>
-        <TopStats neoData={data}/>
+    <Card sx={{pb: 4, backgroundColor: 'background.card'}}>
+        <TopStats neoData={data} />
     <Grid container spacing={2} sx={{display: 'flex', justifyContent: 'center'}}>
         <Grid item xs={12} md={6}>
             <GeoRiskMap neoData={data} />

@@ -4,15 +4,17 @@ export const lightTheme = createTheme({
     palette: {
         mode: 'light',
         primary: {
-            main: '#000c66', //navy blue,
+            main: '#7ec8e3', //navy blue,
             secondary: '#0000ff' //blue
         },
         background: {
             default: '#fcfcfc', //almost white
-            paper: '#fff'
+            paper: '#fff',
+            card:'#e4efff'
         },
         text: {
             primary: '#050a30', //deep blue
+            secondary: '#FFF' //white for dark backgrounds on card
         }
     }
 })
@@ -28,11 +30,12 @@ export const darkTheme = createTheme({
         background: {
             default: 'linear-gradient(135deg, #050a30 30%, #7ec8e3 100%)',
             // default: '#040273',
-            paper: '#040273'
+            paper: '#040273',
+            card: '#00134c',
         },
         text: {
             primary: '#FFF',
-            secondary: '#040273'
+            secondary: '#fff'
         }
     }
 })

@@ -5,8 +5,7 @@ export default function StatisticCard({title, value, color}) {
 
   return (
    <Box elevation={0}>
-        <Typography variant='h5'>{title}</Typography>
-        <Typography variant='h4' style={{color}}>{value}</Typography>
+        <Typography variant='h4'>{title}: {value}</Typography>
    </Box>
   )
 }
