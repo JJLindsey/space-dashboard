@@ -11,10 +11,9 @@ import dayjs from 'dayjs'
 
 export default function TopStats({ neoData }) {
     const {totalCount, hazardousCount, nonHazardousCount} = useNeoStats(neoData)
-    const {startDate, endDate, setStartDate, setEndDate, fetchNeoData} = useNasa()
+    const {startDate, endDate, setStartDate, setEndDate} = useNasa()
 
     const startDayjs = dayjs(startDate)
-    //const endDayjs = dayjs(endDate)
 
     const handleDateChange = (newValue) => {
         if (!newValue) return
@@ -23,13 +22,13 @@ export default function TopStats({ neoData }) {
 
         setStartDate(newStartDate)
         setEndDate(newEndDate)
-        fetchNeoData(newStartDate, newEndDate)
+        //fetchNeoData(newStartDate, newEndDate)
     }
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <Grid2 container spacing={1} sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-          <Typography variant="h6" fontWeight={'bold'}>
+        <Grid2 container spacing={1} sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-end', mr: 8}}>
+          <Typography variant="h6">
             Current Date Range: {dayjs(startDate).format('MMM DD, YYYY')} to {dayjs(endDate).format('MMM DD, YYYY')}
         </Typography>
         <Grid2 item>
@@ -43,7 +42,7 @@ export default function TopStats({ neoData }) {
         />
         </Grid2>
         </Grid2>
-        <Grid2 container spacing={1} sx={{display: 'flex', justifyContent: 'center'}}>
+        <Grid2 container spacing={1} sx={{display: 'flex', justifyContent: 'space-evenly', pb: 4, pt: 2}}>
         <Grid2 item xs={12} md={4}>
             <StatisticCard title='Total NEOs' value={totalCount} color='primary.main'/>
         </Grid2>

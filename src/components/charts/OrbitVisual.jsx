@@ -5,7 +5,7 @@ import OrbitLegend from '../OrbitLegend'
 
 export default function OrbitVisual({ neoData = {}}) {
     const [selectedScale, setSelectedScale] = useState('size')
-    const [timeScale, setTimeScale] = useState(50)
+    const [timeScale, setTimeScale] = useState(30)
     const animationRef = useRef(null)
     const [rotation, setRotation] = useState(0)
 

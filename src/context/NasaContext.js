@@ -35,8 +35,7 @@ export const NasaProvider = ({children}) => {
         const data = await response.json()
         setNeoData(data.near_earth_objects)
         setFilteredData(data.near_earth_objects)
-        setStartDate(start)
-        setEndDate(end)
+
     } catch (err) {
         setError(err.message)
         console.error('Error fetching NEO data:', err)
@@ -57,8 +56,10 @@ export const NasaProvider = ({children}) => {
     }
 
     useEffect(() => {
-        fetchNeoData(startDate, endDate)
-    }, [])
+        if (startDate && endDate) {
+            fetchNeoData(startDate, endDate)
+        }
+    }, [startDate, endDate]) 
     
   return (
     <NasaContext.Provider value={{ neoData: filteredData, loading, error, filterByHazard, fetchNeoData, startDate, endDate, setStartDate, setEndDate}}>
