@@ -10,7 +10,6 @@ import TopStats from './TopStats'
 export default function Dashboard({data}) {
   return (
     <>
-   {/* <Box sx={{mb: 4}}> */}
    <Box
     sx={{
         backgroundImage: `url(${process.env.PUBLIC_URL}/nasa-Q1p7bh3SHj8-unsplash-earth.png)`,
@@ -21,10 +20,8 @@ export default function Dashboard({data}) {
    >
         <Typography variant='h3' align='center' color='#FFF' sx={{pt: '75px'}}>Near Earth Object Dashboard</Typography>
    </Box>
-    <Card>
+    <Card sx={{pb: 4}}>
         <TopStats neoData={data}/>
-      {/* </Card> */}
-   {/* </Box> */}
     <Grid container spacing={2} sx={{display: 'flex', justifyContent: 'center'}}>
         <Grid item xs={12} md={6}>
             <GeoRiskMap neoData={data} />

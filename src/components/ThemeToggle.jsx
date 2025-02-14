@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react'
-import { CssBaseline, Switch, ThemeProvider, GlobalStyles } from '@mui/material'
+import { CssBaseline, Switch, ThemeProvider, GlobalStyles, Box, FormControlLabel } from '@mui/material'
 import { lightTheme, darkTheme } from '../theme/Theme'
 
 export default function ThemeToggle({ children}) {
@@ -27,7 +27,16 @@ export default function ThemeToggle({ children}) {
                     },
                 }}
             />
-        <Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)}/>
+        <Box sx={{
+                position: 'fixed',
+                right: '1rem',
+                zIndex: 1000
+            }}>
+            <FormControlLabel
+              control={<Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)}/>}
+              label='Mode'
+            />
+        </Box>
         {children}
     </ThemeProvider>
   )
