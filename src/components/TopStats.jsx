@@ -43,7 +43,7 @@ export default function TopStats({ neoData }) {
         </Grid2>
         </Grid2>
         <Grid2 sx={{display: 'flex', justifyContent: 'center', pb: 1, pt: 2}}>
-        <Typography variant='h4'>Near Earth Object Stats</Typography>
+        <Typography variant='h4'>Near Earth Object Statistics</Typography>
         </Grid2>
         <Grid2 container spacing={1} sx={{display: 'flex', justifyContent: 'space-evenly', pb: 4, pt: 2}}>
         <Grid2 item xs={12} md={4}>
