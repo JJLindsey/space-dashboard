@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { Box, Button, ButtonGroup ,Card, CardActions, CardContent, Slider, Typography } from '@mui/material'
+import { Box, ToggleButton, ToggleButtonGroup ,Card, CardActions, CardContent, Slider, Typography } from '@mui/material'
 import OrbitLegend from '../OrbitLegend'
 
 
@@ -72,16 +72,16 @@ export default function OrbitVisual({ neoData = {}}) {
             </svg>
         </CardContent>
         <CardActions sx={{justifyContent: 'center'}}>
-            <ButtonGroup
+            <ToggleButtonGroup
                 value={selectedScale}
                 exclusive
                 variant='contained'
                 size='small'
                 onChange={(e, value) => value && setSelectedScale(value)}
             >
-                <Button value='size'>Size Scale</Button>
-                <Button value='distance'>Distance Scale</Button>
-            </ButtonGroup>
+                <ToggleButton value='size'>Size Scale</ToggleButton>
+                <ToggleButton value='distance'>Distance Scale</ToggleButton>
+            </ToggleButtonGroup>
         </CardActions>
         <OrbitLegend/> 
         <Box sx={{width: '70%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 'auto'}}>

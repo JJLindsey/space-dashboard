@@ -18,7 +18,7 @@ export default function Dashboard({data}) {
         minHeight: '250px',
       }}
    >
-        <Typography variant='h3' align='center' color='#FFF' sx={{pt: '75px'}}>Near Earth Object Dashboard</Typography>
+        <Typography variant='h3' align='center' color='#FFF' sx={{pt: '75px'}}>Near Earth Objects </Typography>
    </Box>
     <Card sx={{pb: 4, backgroundColor: 'background.card'}}>
         <TopStats neoData={data} />
