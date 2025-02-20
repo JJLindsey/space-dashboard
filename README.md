@@ -3,10 +3,10 @@
 
 ## **Table of Contents**
 * [Architecture](#architecture)
-* [Design Patterns](#designpatterns)
-* [Data Flow & Management](#dataflow&management )
-* [Live link](#livelink)
-* [Challenges & Solutions](#challenges)
+* [Design Patterns](#design-patterns)
+* [Data Flow & Management](#data-flow--management )
+* [Live link](#live-link)
+* [Challenges & Solutions](#challenges-&-solutions)
 
 ### Architecture Overview
 #### 1. Tech Stack:
