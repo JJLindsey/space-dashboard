@@ -1,8 +1,7 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
-import OrbitVisual from '../components/OrbitVisual'
+import { render, screen, fireEvent } from '@testing-library/react'
+import OrbitVisual from '../components/charts/OrbitVisual'
 import '@testing-library/jest-dom/extend-expect'
-import { relative } from 'path'
 
 describe('OrbitVisual Component', () => {
     const mockNeoData ={
@@ -33,4 +32,25 @@ describe('OrbitVisual Component', () => {
             }
         ]
     }
+
+    test('renders without crashing', () => {
+        render(<OrbitVisual neoData={mockNeoData} />)
+        expect(screen.getByText('Solar System Orbital Visualization')).toBeInTheDocument()
+    })
+
+    test('displays the correct number of asteroids', () => {
+        render(<OrbitVisual neoData={mockNeoData} />)
+
+        expect(screen.getByText('Asteroid 1')).toBeInTheDocument()
+        expect(screen.getByText('Asteroid 2')).toBeInTheDocument()
+    })
+
+    test('changes animation speed when slider moved', () => {
+        render(<OrbitVisual neoData={mockNeoData} />)
+
+        const slider = screen.getByRole('slider')
+        
+        fireEvent.change(slider, { target: { value: 70 }})
+    })
+
 })
