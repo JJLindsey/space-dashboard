@@ -19,7 +19,7 @@
 * UI Library: MUI for its pre-built components and theming capabilities, ensuring a consistent and accessible user interface.
 * Data: NASA Open API
 
-#### 2. Design Patterns
+#### 2. Design Patterns {#design-patterns}
 
 * Container-Presenter Pattern: implemented to separate concerns, making UI components reusable and testable.
 * Hooks: created custom hook for transforming API data, the useNeoStats hook encapsulates the logic for transforming raw API data into a format suitable for visualizations.
