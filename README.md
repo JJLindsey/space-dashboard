@@ -24,16 +24,16 @@
 * Data is filtered based on hazardous status when requested by user.
 * Components access filtered data through custom useNasaStats hook
 * Dashboard receives filtered data & distribute it to visualization components.
-* graph LR
-    * subgraph 'NasaProvider' 
-        * A[fetchNeoData] --> B[NASA API]
-        * B --> C[neoData state]
-        * C  -- filterByHazard --> D[filteredData state]
-    * end
-    * D --> E[useNeoStats hook]
-    * E --> F[DashboardView]
-    * F --> G[Dashboard component]
-    * G --> H[Visualizations]
+#### graph LR
+    subgraph 'NasaProvider' 
+        A[fetchNeoData] --> B[NASA API]
+        B --> C[neoData state]
+        C  -- filterByHazard --> D[filteredData state]
+    end
+    D --> E[useNeoStats hook]
+    E --> F[DashboardView]
+    F --> G[Dashboard component]
+    G --> H[Visualizations]
 
 #### 4. Live link
 
