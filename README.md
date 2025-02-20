@@ -16,7 +16,7 @@
 
 * Container-Presenter Pattern: implemented to separate concerns, making UI components reusable and testable.
 * Hooks: created custom hook for transforming API data, the useNeoStats hook encapsulates the logic for transforming raw API data into a format suitable for visualizations.
-* Accessibility Considerations: ARIA roles, proper color contrast, dark/light mode theme 
+* Accessibility Considerations: Accessibility was a key consideration. ARIA roles were used to provide semantic information to screen readers, and color contrast was carefully checked to ensure readability for users with visual impairments. A dark/light mode theme was implemented for user preference. 
 
 #### 3. Data Flow & Management:
 
