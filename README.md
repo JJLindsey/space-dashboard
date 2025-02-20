@@ -19,13 +19,13 @@
 * UI Library: MUI for its pre-built components and theming capabilities, ensuring a consistent and accessible user interface.
 * Data: NASA Open API
 
-#### 2. design patterns{#design-patterns}
+#### design patterns
 
 * Container-Presenter Pattern: implemented to separate concerns, making UI components reusable and testable.
 * Hooks: created custom hook for transforming API data, the useNeoStats hook encapsulates the logic for transforming raw API data into a format suitable for visualizations.
 * Accessibility Considerations: Accessibility was a key consideration. ARIA roles were used to provide semantic information to screen readers, and color contrast was carefully checked to ensure readability for users with visual impairments. A dark/light mode theme was implemented for user preference. 
 
-#### 3. Data Flow and Management:
+#### Data Flow and Management:
 
 * The NasaProvider fetches Near Earth Object (NEO) data from NASA's NEO API and manages both raw and unfiltered data.
 * Data is filtered based on hazardous status when requested by user.
@@ -42,11 +42,11 @@
     F --> G[Dashboard component]
     G --> H[Visualizations]
 
-#### 4. Live link
+#### live link
 
-#### 5. Screen Shots
+#### Screen Shots
 
 <img src='public/Screenshot 2025-02-13 at 5.34.14 PM.png' width=400 >
 
-#### 6. Challenges
+#### Challenges
 
