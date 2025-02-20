@@ -2,13 +2,13 @@
 ### React.js data visualization dashboard rendering Near Earth Objects (NEO) charts using NASA Open API.
 
 ## **Table of Contents**
-* [Architecture](#architecture-overview)
+* [Tech Stack](#tech-stack)
 * [Design Patterns](#design-patterns)
 * [Data Flow and Management](#data-flow-and-management )
 * [Live link](#live-link)
 * [Challenges](#challenges)
 
-### architecture overview
+### Architecture Overview
 #### Tech Stack:
 
 * React.js - I chose React for its component-based architecture, allowing me to create a modular and maintainable codebase.
@@ -19,7 +19,7 @@
 * UI Library: MUI for its pre-built components and theming capabilities, ensuring a consistent and accessible user interface.
 * Data: NASA Open API
 
-#### design patterns
+#### Design Patterns
 
 * Container-Presenter Pattern: implemented to separate concerns, making UI components reusable and testable.
 * Hooks: created custom hook for transforming API data, the useNeoStats hook encapsulates the logic for transforming raw API data into a format suitable for visualizations.
@@ -42,7 +42,7 @@
     F --> G[Dashboard component]
     G --> H[Visualizations]
 
-#### live link
+#### Live link
 
 #### Screen Shots
 
