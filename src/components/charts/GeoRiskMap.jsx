@@ -108,7 +108,7 @@ export default function GeoRiskMap({ neoData = {}, darkMode}) {
         <CardContent>
             <Typography>Geographic Impact Risk</Typography>
             <Box>
-                <svg ref={svgRef}></svg>
+                <svg ref={svgRef} aria-label='geographic impact risk heat map'></svg>
             </Box>  
             <Paper
                     id='tooltip'

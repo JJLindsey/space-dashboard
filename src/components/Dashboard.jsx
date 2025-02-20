@@ -21,8 +21,8 @@ export default function Dashboard({data}) {
         <Typography variant='h3' align='center' color='#FFF' sx={{pt: '75px'}}>Near Earth Objects </Typography>
    </Box>
     <Card sx={{pb: 4, backgroundColor: 'background.card'}}>
-        <TopStats neoData={data} />
-    <Grid container spacing={2} sx={{display: 'flex', justifyContent: 'center'}}>
+        <TopStats neoData={data} aria-label='statistics card data for totals' />
+    <Grid container spacing={2} sx={{display: 'flex', justifyContent: 'center'}} aria-label='container to render cards for all charts' >
         <Grid item xs={12} md={6}>
             <GeoRiskMap neoData={data} />
         </Grid>

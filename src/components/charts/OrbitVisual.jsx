@@ -45,7 +45,7 @@ export default function OrbitVisual({ neoData = {}}) {
     <Card elevation={8}>
         <CardContent>
         <Typography>Solar System Orbital Visualization</Typography>
-            <svg viewBox='-250 -250 500 500' style={{width: '100%', height: 'auto', backgroundColor: '#000'}}>
+            <svg viewBox='-250 -250 500 500' style={{width: '100%', height: 'auto', backgroundColor: '#000'}} aria-label='orbit asteroid visual image'>
                 {/* Sun */}
                 <circle cx='0' cy='0' r='20' fill='#f9d71c' />
                 {/* Earth Orbit*/}
@@ -73,6 +73,7 @@ export default function OrbitVisual({ neoData = {}}) {
         </CardContent>
         <CardActions sx={{justifyContent: 'center'}}>
             <ToggleButtonGroup
+                aria-label='orbit scale buttons'
                 value={selectedScale}
                 exclusive
                 variant='contained'

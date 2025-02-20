@@ -62,7 +62,7 @@ export default function AsteroidLineChart({ neoData}) {
     <Card elevation={8} sx={{ width: '700px', maxWidth: 800}}>
         <CardContent>
             <Typography sx={{pb: 4}}>Number of Asteroids Approaching Earth</Typography>
-            <Line data={data} options={options}/>
+            <Line data={data} options={options} aria-label='asteroid line chart'/>
             <Typography align='center'>Date</Typography>
         </CardContent>
     </Card>
