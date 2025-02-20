@@ -4,9 +4,9 @@
 ## **Table of Contents**
 * [Architecture](#architecture)
 * [Design Patterns](#design-patterns)
-* [Data Flow & Management](#data-flow--management )
+* [Data Flow and Management](#data-flow-and-management )
 * [Live link](#live-link)
-* [Challenges & Solutions](#challenges-&-solutions)
+* [Challenges](#challenges)
 
 ### Architecture Overview
 #### 1. Tech Stack:
@@ -25,7 +25,7 @@
 * Hooks: created custom hook for transforming API data, the useNeoStats hook encapsulates the logic for transforming raw API data into a format suitable for visualizations.
 * Accessibility Considerations: Accessibility was a key consideration. ARIA roles were used to provide semantic information to screen readers, and color contrast was carefully checked to ensure readability for users with visual impairments. A dark/light mode theme was implemented for user preference. 
 
-#### 3. Data Flow & Management:
+#### 3. Data Flow and Management:
 
 * The NasaProvider fetches Near Earth Object (NEO) data from NASA's NEO API and manages both raw and unfiltered data.
 * Data is filtered based on hazardous status when requested by user.
@@ -48,5 +48,5 @@
 
 <img src='public/Screenshot 2025-02-13 at 5.34.14 PM.png' width=400 >
 
-#### 6. Challenges & Solutions
+#### 6. Challenges
 
