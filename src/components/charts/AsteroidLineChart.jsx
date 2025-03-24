@@ -15,6 +15,7 @@ export default function AsteroidLineChart({ neoData}) {
         date,
         count: neoData[date].length
     }))
+    .sort((a, b) => new Date(a.date) - new Date(b.date))
 
     const data ={
         labels: asteroidCounts.map( d => d.date),

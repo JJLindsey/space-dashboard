@@ -1,4 +1,4 @@
-## Project Overview... IN PROGRESS...
+## Project Overview
 ### React.js data visualization dashboard rendering Near Earth Objects (NEO) charts using NASA Open API.
 
 ## **Table of Contents**
