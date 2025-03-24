@@ -49,4 +49,18 @@
 <img src='public/Screenshot 2025-02-13 at 5.34.14 PM.png' width=400 >
 
 #### Challenges
+One of the biggest challenges in developing this data visualization dashboard was implementing the orbit visualization for near-Earth objects (NEOs). The difficulty stemmed from the mathematical calculations needed to simulate rotating orbits, scaling distances, and positioning objects dynamically.
 
+Challenge:
+
+Converting orbital data (distance, velocity, diameter) into a 2D representation while maintaining an intuitive and accurate scale.
+
+Implementing continuous rotation while ensuring smooth animations.
+
+Dynamically updating asteroid positions based on user-selected scale (distance vs. size).
+
+Solution:
+
+Applied a rotation state and requestAnimationFrame to animate orbits smoothly.
+
+Allowed users to toggle between size-based and distance-based scaling for better visualization.
