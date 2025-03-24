@@ -22,7 +22,6 @@ export default function TopStats({ neoData }) {
 
         setStartDate(newStartDate)
         setEndDate(newEndDate)
-        //fetchNeoData(newStartDate, newEndDate)
     }
 
   return (
