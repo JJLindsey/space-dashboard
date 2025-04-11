@@ -116,8 +116,9 @@ export default function GeoRiskMap({ neoData = {}, darkMode}) {
                         position: 'absolute',
                         display: 'none',
                         padding: '8px',
-                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                        border: '1px solid #ccc'
+                        backgroundColor: 'rgba(13, 40, 89, 0.9)',
+                        border: '1px solid #ccc',
+                        color: '#fff',
                     }}
                 />
             <Box sx={{ mt: 4, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>

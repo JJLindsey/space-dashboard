@@ -29,7 +29,7 @@ export default function ThemeToggle({ children}) {
             />
         <Box sx={{
                 position: 'fixed',
-                right: '1rem',
+                right: '15rem',
                 zIndex: 1000
             }}>
             <FormControlLabel
