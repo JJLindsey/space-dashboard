@@ -14,7 +14,7 @@ export default function DashboardView() {
         py: 4
       }}
     >
-        <Dashboard data={neoData}/>
+      <Dashboard data={neoData}/>
     </Container>
   )
 }
