@@ -8,7 +8,7 @@ function App() {
   return (
     <ThemeToggle>
       <NasaProvider>
-        <Router>
+        <Router basename='/space-dashboard'>
           <Routes>
             <Route  exact path="/" element={<DashboardView />} />
             <Route path="/dashboard" element={<DashboardView />} />
