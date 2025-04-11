@@ -8,11 +8,16 @@ export default function GeoRiskMap({ neoData = {}, darkMode}) {
     const [worldData, setWorldData] = useState(null)
 
     useEffect(() => {
-        d3.json('/countries-50m.json').then((topology) => {
+        d3.json(`${process.env.PUBLIC_URL}/countries-50m.json`)
+          .then((topology) => {
             const countries = topojson.feature(topology, topology.objects.countries)
             setWorldData(countries)
-        })
+          })
+          .catch((err) => {
+            console.error('Failed to load countries JSON:', err)
+          });
     }, [])
+      
 
     useEffect(() => {
         if (! worldData || !neoData) return
