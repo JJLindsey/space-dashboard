@@ -33,8 +33,9 @@ export default function ThemeToggle({ children}) {
                 zIndex: 1000
             }}>
             <FormControlLabel
+              aria-label='switch for dark or light mode'
               control={<Switch checked={darkMode} onChange={() => setDarkMode(!darkMode)}/>}
-              label='Mode'
+              label={darkMode ? 'Dark Mode (On)' : 'Dark Mode (Off)'}
             />
         </Box>
         {children}

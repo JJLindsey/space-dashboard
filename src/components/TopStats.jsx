@@ -27,13 +27,12 @@ export default function TopStats({ neoData }) {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
         <Grid2 container spacing={1} sx={{display: 'flex', flexDirection: 'column', alignItems: 'flex-end', mr: 8}}>
-          <Typography variant="h6">
+          <Typography variant="h6" id='date-range-display' sx={{mb: 1}}>
             Current Date Range: {dayjs(startDate).format('MMM DD, YYYY')} to {dayjs(endDate).format('MMM DD, YYYY')}
         </Typography>
         <Grid2 item>
             <Typography>Choose a Different Start Date</Typography>
         <DatePicker
-            aria-label='Date picker'
             value={startDayjs}
             onChange={handleDateChange}
             slotProps={{ textField: { InputLabelProps: { shrink: true } } }}
@@ -44,8 +43,8 @@ export default function TopStats({ neoData }) {
         <Grid2 sx={{display: 'flex', justifyContent: 'center', pb: 1, pt: 2}}>
         <Typography variant='h4'>Near Earth Object (NEO) Statistics</Typography>
         </Grid2>
-        <Grid2 container spacing={1} sx={{display: 'flex', justifyContent: 'space-evenly', pb: 4, pt: 2}}>
-        <Grid2 item xs={12} md={4}>
+        <Grid2 container spacing={1} sx={{display: 'flex', justifyContent: { xs: 'center', md: 'space-evenly' }, pb: 4, pt: 2}}>
+        <Grid2 item xs={12} md={4} sm={12} sx={{justifyContent: { xs: 'center', md: 'space-evenly' }}}>
             <StatisticCard title='Total NEOs' value={totalCount} />
         </Grid2>
         <Grid2 item xs={12} md={4}>

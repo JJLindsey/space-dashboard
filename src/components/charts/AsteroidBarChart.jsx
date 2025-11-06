@@ -1,7 +1,7 @@
 import React from 'react'
 import { Chart as ChartJS, BarElement, CategoryScale, Legend, LinearScale, Title, Tooltip } from 'chart.js'
 import { Bar } from 'react-chartjs-2'
-import { Card, CardContent, Typography, useTheme } from '@mui/material'
+import { Card, CardContent, Typography, useTheme, Box } from '@mui/material'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
@@ -55,9 +55,19 @@ export default function AsteroidBarChart( {neoData }) {
         },
     }
     return (
-        <Card elevation={8} sx={{width: '700px', maxWidth: 800, margin: 'auto'}}>
+        <Card elevation={8} sx={{width: { xs: '100%', sm: '100%', md: '700px' }, height: {xs: '100%'}, margin: 'auto'}}>
             <CardContent aria-label='Asteroid Size Chart Card'>
                 <Typography sx={{pb: 4}}>NEO Size</Typography>
+                {/* <Box sx={{
+                    position: 'relative',
+                    width: '100%',
+                    aspectRatio: '16 / 9',
+                    mb: 2,
+                }}
+                >
+                    <Bar data={data} options={options} aria-label='asteroid bar chart' />
+                    <Typography align='center'>Asteroid Name</Typography>
+                </Box> */}
                 <Bar data={data} options={options} aria-label='asteroid bar chart' />
                 <Typography align='center'>Asteroid Name</Typography>
             </CardContent>

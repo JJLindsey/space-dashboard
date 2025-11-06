@@ -88,6 +88,23 @@ export default function GeoRiskMap({ neoData = {}, darkMode}) {
             .attr('r', d => Math.sqrt(d.distance) / 500)
             .attr('fill', d => colorScale(d.velocity))
             .attr('opacity', 0.7)
+            .on('focus', function (event, d) {
+                    // visually highlight focused asteroid
+                    d3.select(this).attr('stroke', 'black').attr('stroke-width', 2);
+                    d3.select('#tooltip')
+                    .style('left', `${event.pageX + 10}px`)
+                    .style('top', `${event.pageY - 30}px`)
+                    .style('display', 'block')
+                    .html(`
+                        <strong>${d.name}</strong><br>
+                        Velocity: ${d.velocity.toFixed(2)} km/s<br>
+                        Distance: ${d.distance.toFixed(0)} km
+                    `);
+                })
+                .on('blur', function () {
+                    d3.select(this).attr('stroke', 'none');
+                    d3.select('#tooltip').style('display', 'none');
+                })
             .on('mouseover', function (event, d) {
                 d3.select(this).attr('stroke', 'black').attr('stroke-width', 2)
 
@@ -109,11 +126,19 @@ export default function GeoRiskMap({ neoData = {}, darkMode}) {
     }, [worldData, neoData, darkMode])
 
   return (
-    <Card  elevation={8}>
+    <Card elevation={8} gutterBottom>
         <CardContent>
             <Typography>Geographic Impact Risk</Typography>
-            <Box>
-                <svg ref={svgRef} aria-label='geographic impact risk heat map'></svg>
+             <Typography
+                id="geoMapDesc"
+                variant='body2'
+                gutterBottom
+                sx={{ overflowWrap: 'break-word'}}
+            >
+                    Color indicates its velocity and the size represents proximity to Earth.
+            </Typography>
+            <Box role='region'>
+                <svg ref={svgRef} aria-label='geographic impact risk heat map showing hazardous near-earth asteroids across the globe'></svg>
             </Box>  
             <Paper
                     id='tooltip'
@@ -126,9 +151,10 @@ export default function GeoRiskMap({ neoData = {}, darkMode}) {
                         color: '#fff',
                     }}
                 />
-            <Box sx={{ mt: 4, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <Box sx={{ mt: 4, display: 'flex', alignItems: 'center', justifyContent: 'center', paddingBottom: 8}}>
             <Typography variant='body2' sx={{ mr: 1 }}>Risk Level: Low</Typography>
                 <Box
+                    aria-label='color gradient box scale showing low to high risk from left to right'
                     sx={{
                     width: 200,
                     height: 20,

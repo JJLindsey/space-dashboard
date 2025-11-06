@@ -11,6 +11,7 @@ export default function Dashboard({data}) {
   return (
     <>
    <Box
+    role='banner'
     sx={{
         backgroundImage: `url(${process.env.PUBLIC_URL}/nasa-Q1p7bh3SHj8-unsplash-earth.png)`,
         backgroundSize: 'cover',
@@ -24,16 +25,16 @@ export default function Dashboard({data}) {
         <TopStats neoData={data} aria-label='statistics card data for totals' />
     <Grid container spacing={2} sx={{display: 'flex', justifyContent: 'center'}} aria-label='container to render cards for all charts' >
         <Grid item xs={12} md={6}>
-            <GeoRiskMap neoData={data} />
+            <GeoRiskMap neoData={data} aria-label='Geographic Impact visualization of near earth objects' role='img'/>
         </Grid>
         <Grid item xs={12} md={6}>
-            <OrbitVisual neoData={data}/>
+            <OrbitVisual neoData={data} aria-label='solar system orbital visualization of objects' role='img'/>
         </Grid>
         <Grid item xs={12} md={12}>
-            <AsteroidBarChart neoData={data}/>
+            <AsteroidBarChart neoData={data} aria-label='Bar chart showing asteroid count by size' role='img'/>
         </Grid>
         <Grid item xs={12} md={6}>
-            <AsteroidLineChart neoData={data}/>
+            <AsteroidLineChart neoData={data} aria-label='Line chart showing number asteroids near earth' role='img'/>
         </Grid>
     </Grid>
     </Card>
