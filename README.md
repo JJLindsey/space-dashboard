@@ -43,6 +43,7 @@
     G --> H[Visualizations]
 
 #### Live link
+https://jjlindsey.github.io/space-dashboard/
 
 #### Screen Shots
 
